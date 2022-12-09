@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY_PRIVATE }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script:
+          script: |
             sudo docker pull ta9ear/infra_actions
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 ta9ear/infra_actions
